@@ -13,8 +13,8 @@
       </mat-form-field>
       <mat-card class="product-card" *ngFor="let product of products">
         <mat-card-title-group>
-          <mat-card-title>{{ product.name }} €</mat-card-title>
-          <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
+          <mat-card-title>{{ product.name }}</mat-card-title>
+          <mat-card-subtitle>{{ product.price }} €</mat-card-subtitle>
           <img mat-card-lg-image src="{{ product.imgUrl}}"/>
         </mat-card-title-group>
 
@@ -62,6 +62,13 @@
         <mat-card-title-group>
           <mat-card-title>{{ slProduct.name }}</mat-card-title>
           <mat-card-subtitle>{{ slProduct.price }} €</mat-card-subtitle>
+          <mat-card-subtitle>
+            <mat-form-field>
+              <mat-label>Quantity</mat-label>
+              <span matPrefix>x &nbsp;</span>
+              <input type="number" min="1" max="100" matInput [(ngModel)]="slProduct.quantity" (change)="updateProduct(slProduct)">
+            </mat-form-field>
+          </mat-card-subtitle>
           <img mat-card-lg-image src="{{ slProduct.imgUrl}}"/>
         </mat-card-title-group>
 
@@ -74,7 +81,7 @@
 
       <mat-card *ngIf="shoppingListProducts.length">
         <div>
-          <span>{{'nbArticle' | translate}} : {{shoppingListProducts.length}}</span>
+          <span>{{'nbArticle' | translate}} : {{getNbArticle()}}</span>
         </div>
         <div>
           <span>{{'total' | translate}} : {{getTotal()}} €</span>

@@ -75,12 +75,29 @@ export class ShoppingListDetailComponent {
   }
 
   addProductToCurrentList(product) {
+    const index = this.shoppingListProducts.findIndex(i => i.id === product.id);
+    if (index >= 0) {
+      product.quantity++;
+
+      this.shoppingListProducts[index] = product;
+      this.shoppingService.removeProductFromShoppingList(product, this.shoppingList);
+    } else {
+      this.shoppingListProducts.unshift(product);
+    }
     this.shoppingService.addProductToShoppingList(product, this.shoppingList);
     this.shoppingService.showSnackBar('productAdded');
-    this.shoppingListProducts.unshift(product);
+  }
+
+  updateProduct(product: Product) {
+    this.shoppingService.removeProductFromShoppingList(product, this.shoppingList);
+    this.shoppingService.addProductToShoppingList(product, this.shoppingList);
+  }
+
+  getNbArticle() {
+    return this.shoppingListProducts.reduce((acc, cur) => acc + cur.quantity, 0);
   }
 
   getTotal() {
-    return this.shoppingListProducts.reduce((acc, cur) => acc + cur.price, 0);
+    return this.shoppingListProducts.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
   }
 }
