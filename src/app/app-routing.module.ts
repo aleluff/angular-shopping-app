@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: '', component: DashboardComponent, data: {title: 'Dashboard'}
   },
-  {path: AppConfig.routes.shopping, loadChildren: 'app/shopping/shopping.module#ShoppingModule'},
+  {path: AppConfig.routes.shopping, loadChildren: () => import('app/shopping/shopping.module').then(m => m.ShoppingModule)},
   {path: AppConfig.routes.error404, component: Error404Component},
   {path: '**', redirectTo: '/' + AppConfig.routes.error404}
 ];

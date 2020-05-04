@@ -27,17 +27,19 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "core-js": "^3.6.5",
     "rxjs": "^6.5.5",
-    "zone.js": "^0.10.3"
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.901.4",
     "@angular/cli": "~9.1.4",
     "@angular/compiler-cli": "^9.1.4",
     "@angular/language-service": "^9.1.4",
     "@types/jasmine": "~3.5.10",
     "@types/jasminewd2": "~2.0.8",
-    "@types/node": "~13.13.4",
+    "@types/node": "^12.11.1",
     "angular-cli-ghpages": "^0.6.2",
-    "codelyzer": "^5.2.2",
+    "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.2",
     "karma": "~5.0.4",
