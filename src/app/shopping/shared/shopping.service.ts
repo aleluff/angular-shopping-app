@@ -4,13 +4,13 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AppConfig} from '../../config/app.config';
 
 import {ShoppingList} from './shopping-list.model';
-import {Observable} from 'rxjs/Observable';
-import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
+import {Observable} from 'rxjs';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 import {TranslateService} from '@ngx-translate/core';
 import {catchError, map} from 'rxjs/operators';
 import {Product} from './product.model';
-import {_throw} from 'rxjs/observable/throw';
-import {of} from 'rxjs/observable/of';
+import {throwError as _throw} from 'rxjs';
+import {of} from 'rxjs';
 
 @Injectable()
 export class ShoppingService {
@@ -131,7 +131,7 @@ export class ShoppingService {
 
   getShoppingListById(slId: string): ShoppingList {
     const shoppingLists = this.getAllShoppingLists().sort((a, b) => a.id - b.id);
-    return shoppingLists.filter(sl => sl.id === parseInt(slId))[0];
+    return shoppingLists.filter(sl => sl.id === parseInt(slId, 10))[0];
   }
 
   createShoppingList(shoppingList: any): ShoppingList {

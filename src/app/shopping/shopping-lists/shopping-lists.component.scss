@@ -23,7 +23,7 @@
   margin: 0 auto;
   display: table;
 
-  /deep/ .mat-list-text {
+  ::ng-deep .mat-list-text {
     text-align: left !important;
   }
 

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ActivatedRouteSnapshot, NavigationEnd, Router} from '@angular/router';
 import {filter, map, flatMap, merge} from 'rxjs/operators';
 import {TranslateService} from '@ngx-translate/core';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 
 
 @Injectable()

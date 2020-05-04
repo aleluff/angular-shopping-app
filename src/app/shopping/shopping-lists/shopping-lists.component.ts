@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {ShoppingList} from '../shared/shopping-list.model';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ShoppingService} from '../shared/shopping.service';
-import {MatDialog} from '@angular/material';
+import {MatDialog} from '@angular/material/dialog';
 import {Router} from '@angular/router';
 import {AppConfig} from '../../config/app.config';
 
