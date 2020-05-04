@@ -31,11 +31,11 @@
   <div>
     <form [formGroup]="newShoppingListForm" #form="ngForm"
           (ngSubmit)="createNewShoppingList(newShoppingListForm.value)">
-      <mat-input-container class="input-container">
+      <mat-form-field class="input-container">
         <input matInput type="text"
                placeholder="{{'name' | translate}}"
                formControlName="name">
-      </mat-input-container>
+      </mat-form-field>
 
       <button mat-raised-button type="submit" [disabled]="!newShoppingListForm.valid">
         {{'create' | translate}}

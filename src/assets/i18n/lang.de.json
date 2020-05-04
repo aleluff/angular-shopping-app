@@ -2,7 +2,7 @@
   "Pages": {
     "Dashboard": {
       "Title": "Dashboard",
-      "Headline": "Angular 5 Beispiel Shopping App",
+      "Headline": "Angular Shopping App",
       "welcomeText": "Hier können Sie Ihre Einkaufslisten erstellen und bearbeiten:"
     },
     "Shopping": {
@@ -14,7 +14,7 @@
     }
   },
   "error404": "404 Error",
-  "angularShoppingListsApp": "Angular 5 Beispiel Shopping App",
+  "angularShoppingListsApp": "Angular Shopping App",
   "shoppingLists": "Einkaufslisten",
   "shoppingListCreated": "Einkaufsliste ist erstellt",
   "saved": "Gespeichert",

@@ -1,4 +1,4 @@
-# Angular 5 Example Shopping App + Angular Material + Responsive 
+# Angular Shopping App + Angular Material + Responsive 
 
 > ### Made with :heart: 
 
@@ -20,7 +20,7 @@ API connection:
 - App uses shutterstock.com API, but it can be easily changed to any other api
 
 ## Features
-- Angular 5+
+- Angular 9+
 - Internationalization (translations)
 - Routing
 - Lazy loading (Shopping module)
