@@ -13,8 +13,6 @@ export const AppConfig = {
 
   },
   snackBarDuration: 3000,
-  // TODO
-  repositoryURL: 'https://github.com/affilnost/angular5-example-shopping-app',
   defultSHContent: '[{"id":"257450194","name":"Chicken salad with leaf vegetables and cherry toma...",' +
     '"imgUrl":"https://image.shutterstock.com/display_pic_with_logo/236329/257450194/stock-photo-chicken-salad' +
     '-with-leaf-vegetables-and-cherry-tomatoes-257450194.jpg","description":"Chicken salad with leaf vegetables' +

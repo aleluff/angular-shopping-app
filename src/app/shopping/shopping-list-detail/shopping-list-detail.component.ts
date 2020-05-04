@@ -66,7 +66,6 @@ export class ShoppingListDetailComponent {
     this.shoppingListProducts = this.shoppingListProducts.filter(pr => pr.id !== product.id);
     this.shoppingService.removeProductFromShoppingList(product, this.shoppingList);
     this.shoppingService.showSnackBar('productRemovedFromShoppingList');
-
   }
 
   getProducts() {
@@ -79,5 +78,9 @@ export class ShoppingListDetailComponent {
     this.shoppingService.addProductToShoppingList(product, this.shoppingList);
     this.shoppingService.showSnackBar('productAdded');
     this.shoppingListProducts.unshift(product);
+  }
+
+  getTotal() {
+    return this.shoppingListProducts.reduce((acc, cur) => acc + cur.price, 0);
   }
 }

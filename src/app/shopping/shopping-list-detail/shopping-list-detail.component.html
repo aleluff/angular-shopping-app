@@ -1,5 +1,32 @@
 <div class="twoColFlex">
   <div class="col left-col">
+    <h2 class="section-title">{{ 'availableProducts' | translate }}</h2>
+    <div>
+      <mat-progress-spinner *ngIf="!products"
+                            class="progress-spinner"
+                            [color]="'primary'"
+                            [mode]="'indeterminate'">
+      </mat-progress-spinner>
+      <mat-form-field id="searchProduct">
+        <input matInput type="text" placeholder="{{ 'productSearch' | translate }}" (input)="getProducts()"
+               [(ngModel)]="search"/>
+      </mat-form-field>
+      <mat-card class="product-card" *ngFor="let product of products">
+        <mat-card-title-group>
+          <mat-card-title>{{ product.name }} €</mat-card-title>
+          <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
+          <img mat-card-lg-image src="{{ product.imgUrl}}"/>
+        </mat-card-title-group>
+
+        <button mat-raised-button (click)="addProductToCurrentList(product)">
+          <mat-icon class="add-icon">add</mat-icon>
+          {{ 'addToShoppingList' | translate}}
+        </button>
+
+      </mat-card>
+    </div>
+  </div>
+  <div class="col right-col">
     <div>
       <h2 class="section-title sl-title">
         <span>{{'Pages.ShoppingList.Title' | translate}} &ldquo;<span *ngIf="shoppingList">{{shoppingList.name}}</span>&rdquo;</span>
@@ -34,7 +61,7 @@
       <mat-card class="product-card" *ngFor="let slProduct of shoppingListProducts">
         <mat-card-title-group>
           <mat-card-title>{{ slProduct.name }}</mat-card-title>
-          <mat-card-subtitle>{{ slProduct.price }}</mat-card-subtitle>
+          <mat-card-subtitle>{{ slProduct.price }} €</mat-card-subtitle>
           <img mat-card-lg-image src="{{ slProduct.imgUrl}}"/>
         </mat-card-title-group>
 
@@ -44,32 +71,18 @@
         </button>
 
       </mat-card>
-    </div>
-  </div>
-  <div class="col right-col">
-    <h2 class="section-title">{{ 'availableProducts' | translate }}</h2>
-    <div>
-      <mat-progress-spinner *ngIf="!products"
-                            class="progress-spinner"
-                            [color]="'primary'"
-                            [mode]="'indeterminate'">
-      </mat-progress-spinner>
-      <mat-form-field id="searchProduct">
-        <input matInput type="text" placeholder="{{ 'productSearch' | translate }}" (input)="getProducts()"
-               [(ngModel)]="search"/>
-      </mat-form-field>
-      <mat-card class="product-card" *ngFor="let product of products">
-        <mat-card-title-group>
-          <mat-card-title>{{ product.name }}</mat-card-title>
-          <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
-          <img mat-card-lg-image src="{{ product.imgUrl}}"/>
-        </mat-card-title-group>
 
-        <button mat-raised-button (click)="addProductToCurrentList(product)">
-          <mat-icon class="add-icon">add</mat-icon>
-          {{ 'addToShoppingList' | translate}}
+      <mat-card *ngIf="shoppingListProducts.length">
+        <div>
+          <span>{{'nbArticle' | translate}} : {{shoppingListProducts.length}}</span>
+        </div>
+        <div>
+          <span>{{'total' | translate}} : {{getTotal()}} €</span>
+        </div>
+        <button mat-raised-button color="accent">
+          <mat-icon>shopping_cart</mat-icon>
+          {{'checkout' | translate}}
         </button>
-
       </mat-card>
     </div>
   </div>

@@ -34,5 +34,8 @@
   "productRemovedFromShoppingList": "The product is removed",
   "removeFromShoppingList": "Remove from shopping list",
   "shoppingListName": "Shopping list name",
-  "save": "Save"
+  "save": "Save",
+  "checkout": "Checkout",
+  "nbArticle": "Number of article",
+  "total": "Total"
 }

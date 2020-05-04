@@ -159,7 +159,7 @@ export class ShoppingService {
   showSnackBar(name): void {
     const config: any = new MatSnackBarConfig();
     config.duration = AppConfig.snackBarDuration;
-    this.snackBar.open(this.translations[name], 'OK', config);
+    this.snackBar.open(this.translations[name], 'X', config);
   }
 
 }
