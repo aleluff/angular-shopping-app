@@ -8,7 +8,7 @@ import {FooterComponent} from './footer/footer.component';
 import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
 
-import { Error404Component} from './error404/error404.component';
+import {Error404Component} from './error404/error404.component';
 import {ProgressBarService} from './progress-bar.service';
 
 @NgModule({

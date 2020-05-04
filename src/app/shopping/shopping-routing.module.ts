@@ -10,7 +10,7 @@ const shoppingRoutes: Routes = [
     path: '',
     component: ShoppingComponent,
     children: [
-      {path: '', component: ShoppingListsComponent, data: {'title': 'Shopping'} },
+      {path: '', component: ShoppingListsComponent, data: {'title': 'Shopping'}},
       {path: ':id', component: ShoppingListDetailComponent, data: {'title': 'ShoppingList'}}
     ]
   }

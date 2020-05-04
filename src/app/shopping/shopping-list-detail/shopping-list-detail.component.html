@@ -17,11 +17,14 @@
                             [mode]="'indeterminate'">
       </mat-progress-spinner>
       <div class="editname-form-container">
-        <form [ngClass]="{'invisible': !listNameEditMode}" [formGroup]="editShoppingListNameForm" #form="ngForm" (ngSubmit)="saveShoppingListName(editShoppingListNameForm.value)">
+        <form [ngClass]="{'invisible': !listNameEditMode}" [formGroup]="editShoppingListNameForm" #form="ngForm"
+              (ngSubmit)="saveShoppingListName(editShoppingListNameForm.value)">
           <mat-form-field [ngClass]="{'invisible': !listNameEditMode}">
-            <input matInput formControlName="shoppingListName" type="text" [ngModel]="shoppingList.name" placeholder="{{ 'shoppingListName' | translate }}"/>
+            <input matInput formControlName="shoppingListName" type="text" [ngModel]="shoppingList.name"
+                   placeholder="{{ 'shoppingListName' | translate }}"/>
           </mat-form-field>
-          <button mat-raised-button type="submit" [disabled]="!editShoppingListNameForm.valid" [ngClass]="{'invisible': !listNameEditMode, 'save-btn': true}">
+          <button mat-raised-button type="submit" [disabled]="!editShoppingListNameForm.valid"
+                  [ngClass]="{'invisible': !listNameEditMode, 'save-btn': true}">
             {{ 'save' | translate}}
           </button>
         </form>
@@ -52,7 +55,8 @@
                             [mode]="'indeterminate'">
       </mat-progress-spinner>
       <mat-form-field>
-        <input matInput type="text" placeholder="{{ 'productSearch' | translate }}" (input)="getProducts()" [(ngModel)]="search"/>
+        <input matInput type="text" placeholder="{{ 'productSearch' | translate }}" (input)="getProducts()"
+               [(ngModel)]="search"/>
       </mat-form-field>
       <mat-card class="product-card" *ngFor="let product of products">
         <mat-card-title-group>

@@ -23,7 +23,7 @@ export class StateService {
         })
       ).pipe(
         flatMap(title => {
-          return title ? translate.get('Pages.' + title + '.Title') : of([]) ;
+          return title ? translate.get('Pages.' + title + '.Title') : of([]);
 
         })
       );

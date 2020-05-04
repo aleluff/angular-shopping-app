@@ -29,7 +29,8 @@
 <div class="right-col">
   <h2 class="section-title">{{ 'createShoppingList' | translate }}</h2>
   <div>
-    <form [formGroup]="newShoppingListForm" #form="ngForm" (ngSubmit)="createNewShoppingList(newShoppingListForm.value)">
+    <form [formGroup]="newShoppingListForm" #form="ngForm"
+          (ngSubmit)="createNewShoppingList(newShoppingListForm.value)">
       <mat-input-container class="input-container">
         <input matInput type="text"
                placeholder="{{'name' | translate}}"
